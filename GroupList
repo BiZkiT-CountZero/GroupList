@@ -1,0 +1,46 @@
+package com.gmail.bizkit245;
+
+import java.util.ArrayList;
+
+public class GroupList {
+
+	private String groupname;
+	private ArrayList<Student> list = new ArrayList<>(10);
+
+
+	public GroupList(String groupname) {
+		super();
+		this.groupname = groupname;
+	}
+
+	public String getGroupname() {
+		return groupname;
+	}
+
+	public void setGroupname(String groupname) {
+		this.groupname = groupname;
+	}
+
+	public void addStudent(Student a) {
+
+		list.add(a);
+	}
+
+	public void toScreen() {
+		System.out.println("Group: " + groupname);
+
+		for (int i = 0; i < list.size(); i++) {
+
+			System.out.println("Student " + (i + 1) + ": " + list.get(i).getName());
+		}
+
+	}
+
+	public void findStudent(String name) {
+		for (int i = 0; i < list.size(); i++) {
+			list.get(i).getName().equalsIgnoreCase(name);
+		}
+		System.out.println("This student exists");
+
+	}
+}
